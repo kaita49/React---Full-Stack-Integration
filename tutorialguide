@@ -4,6 +4,6 @@
 #cd homehub-backend 
 # npm install express apollo-server-express graphql mysql2
 #create.env file in the mybackend directory
-#create  index.js in the mybackend directory
+#create  index.js in the mybackend directory & input the data (you can modify it to suit your case)
 
 
