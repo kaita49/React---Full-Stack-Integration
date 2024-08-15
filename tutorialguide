@@ -4,6 +4,8 @@
 #cd homehub-backend 
 # npm install express apollo-server-express graphql mysql2
 #create.env file in the mybackend directory
-#create  index.js in the mybackend directory & input the data (you can modify it to suit your case)
-
+#create  "index.js" in the mybackend directory & input the data (you can modify it to suit your case)
+#now we are done with the backend, you can set it up to run in the cmd or whichever terminal of your choice(#make sure you in the backend directory then run "node index.js")
+#Go to your React frontend project directory
+#In your React project, create a new file named "ApolloProvider.js" in the src directory
 
