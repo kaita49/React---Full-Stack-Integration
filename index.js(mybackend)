@@ -21,7 +21,7 @@ const pool = mysql.createPool({
 async function createTable() {
     const connection = await pool.getConnection();
     const createTableQuery = `
-        CREATE TABLE IF NOT EXISTS tenants (
+        CREATE TABLE IF NOT EXISTS testtable (
             id INT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             email VARCHAR(100) NOT NULL,
@@ -32,9 +32,9 @@ async function createTable() {
     
     try {
         await connection.query(createTableQuery);
-        console.log('✅ Tenants table created successfully!');
+        console.log('✅ Test table created successfully!');
     } catch (error) {
-        console.error('❌ Error creating tenants table:', error.message);
+        console.error('❌ Error creating test table:', error.message);
     } finally {
         connection.release();
     }
@@ -44,17 +44,17 @@ async function createTable() {
 async function insertSampleData() {
     const connection = await pool.getConnection();
     const sampleData = [
-        { name: 'John Doe', email: 'john@example.com', phone: '(123) 456-7890', houseno: '001' },
-        { name: 'Jane Smith', email: 'jane@example.com', phone: '(234) 567-8901', houseno: '002' },
+        { name: 'sam Doe', email: 'john@example.com', phone: '(123) 456-7890', houseno: '001' },
+        { name: 'peter Smith', email: 'jane@example.com', phone: '(234) 567-8901', houseno: '002' },
         { name: 'Alice Johnson', email: 'alice@example.com', phone: '(345) 678-9012', houseno: '003' },
-        { name: 'Bob Brown', email: 'bob@example.com', phone: '(456) 789-0123', houseno: '004' },
-        { name: 'Charlie Davis', email: 'charlie@example.com', phone: '(567) 890-1234', houseno: '005' },
-        { name: 'Diana Evans', email: 'diana@example.com', phone: '(678) 901-2345', houseno: '006' },
-        { name: 'Edward Green', email: 'edward@example.com', phone: '(789) 012-3456', houseno: '007' },
-        { name: 'Fiona White', email: 'fiona@example.com', phone: '(890) 123-4567', houseno: '008' },
-        { name: 'George Black', email: 'george@example.com', phone: '(901) 234-5678', houseno: '009' },
-        { name: 'Hannah Blue', email: 'hannah@example.com', phone: '(012) 345-6789', houseno: '010' },
-        { name: 'Ian Red', email: 'ian@example.com', phone: '(123) 456-7891', houseno: '011' },
+        { name: 'debo Brown', email: 'bob@example.com', phone: '(456) 789-0123', houseno: '004' },
+        { name: 'jackie Davis', email: 'charlie@example.com', phone: '(567) 890-1234', houseno: '005' },
+        { name: 'miriam Evans', email: 'diana@example.com', phone: '(678) 901-2345', houseno: '006' },
+        { name: 'sap Green', email: 'edward@example.com', phone: '(789) 012-3456', houseno: '007' },
+        { name: 'qwen White', email: 'fiona@example.com', phone: '(890) 123-4567', houseno: '008' },
+        { name: 'soph Black', email: 'george@example.com', phone: '(901) 234-5678', houseno: '009' },
+        { name: 'kenya Blue', email: 'hannah@example.com', phone: '(012) 345-6789', houseno: '010' },
+        { name: 'jim Red', email: 'ian@example.com', phone: '(123) 456-7891', houseno: '011' },
     ];
 
     try {
@@ -102,7 +102,7 @@ const resolvers = {
     Query: {
         tenants: async () => {
             const connection = await pool.getConnection();
-            const [rows] = await connection.query('SELECT * FROM tenants');
+            const [rows] = await connection.query('SELECT * FROM testtable');
             connection.release();
             return rows;
         },
