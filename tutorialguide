@@ -3,6 +3,7 @@
 # mkdir mybackend(mybackend is directory for my backend code)
 #cd homehub-backend 
 # npm install express apollo-server-express graphql mysql2
-#create  index.js in the mybackend directory
 #create.env file in the mybackend directory
+#create  index.js in the mybackend directory
+
 
