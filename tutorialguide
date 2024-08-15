@@ -1,8 +1,8 @@
 #assuming you ve already created your sample front end page/components(react-tailwind).
 #for my demonstration i will be using an online mysql database hosted in aiven "https://aiven.io/free-mysql-database"
-# mkdir homehub-backend(homehub-backend is directory for my backend)
+# mkdir mybackend(mybackend is directory for my backend code)
 #cd homehub-backend 
 # npm install express apollo-server-express graphql mysql2
-#create  index.js in the homehub-backend directory
-#create.env file in the homehub-backend directory
+#create  index.js in the mybackend directory
+#create.env file in the mybackend directory
 
