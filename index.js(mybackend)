@@ -1,4 +1,4 @@
-# index.js code that includes everything: establishing a connection to the MySQL database, creating the tenants table, inserting sample data, and setting up the GraphQL server with the necessary schema and resolvers.
+// index.js code that includes everything: establishing a connection to the MySQL database, creating the tenants table, inserting sample data, and setting up the GraphQL server with the necessary schema and resolvers.
 
 require('dotenv').config();
 const express = require('express');
