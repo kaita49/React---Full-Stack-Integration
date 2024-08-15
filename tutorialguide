@@ -8,4 +8,5 @@
 #now we are done with the backend, you can set it up to run in the cmd or whichever terminal of your choice(#make sure you in the backend directory then run "node index.js")
 #Go to your React frontend project directory
 #In your React project, create a new file named "ApolloProvider.js" in the src directory
+#wrap your  // src/index.js or src/App.js application with the ApolloProviderComponent.
 
