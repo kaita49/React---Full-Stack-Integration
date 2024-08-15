@@ -131,25 +131,3 @@ server.start().then(() => {
     await createTable();
     await insertSampleData();
 })();
-
-
-----------------------------------------------------------------------------------------------------------------------------------------
--Go to your React frontend project directory
-
--In your React project, create a new file named ApolloProvider.js in the src directory. This file will set up the Apollo Client.
-
-// src/ApolloProvider.js
-import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
-const client = new ApolloClient({
-    uri: 'http://localhost:4000/graphql', // Your GraphQL API endpoint
-    cache: new InMemoryCache(),
-});
-
-const ApolloProviderComponent = ({ children }) => {
-    return <ApolloProvider client={client}>{children}</ApolloProvider>;
-};
-
-export default ApolloProviderComponent;
-
