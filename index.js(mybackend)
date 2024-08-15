@@ -1,5 +1,3 @@
-// index.js code that includes everything: establishing a connection to the MySQL database, creating the tenants table, inserting sample data, and setting up the GraphQL server with the necessary schema and resolvers.
-
 require('dotenv').config();
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
@@ -17,7 +15,7 @@ const pool = mysql.createPool({
     },
 });
 
-// Function to create the tenants table
+// Function to create the testtable table
 async function createTable() {
     const connection = await pool.getConnection();
     const createTableQuery = `
@@ -40,7 +38,7 @@ async function createTable() {
     }
 }
 
-// Function to insert sample data into the tenants table
+// Function to insert sample data into the testtable
 async function insertSampleData() {
     const connection = await pool.getConnection();
     const sampleData = [
@@ -58,9 +56,9 @@ async function insertSampleData() {
     ];
 
     try {
-        for (const tenant of sampleData) {
-            const { name, email, phone, houseno } = tenant;
-            const insertQuery = 'INSERT INTO tenants (name, email, phone, houseno) VALUES (?, ?, ?, ?)';
+        for (const record of sampleData) {
+            const { name, email, phone, houseno } = record;
+            const insertQuery = 'INSERT INTO testtable (name, email, phone, houseno) VALUES (?, ?, ?, ?)';
             await connection.query(insertQuery, [name, email, phone, houseno]);
         }
         console.log('✅ Sample data inserted successfully!');
@@ -84,7 +82,7 @@ async function testConnection() {
 
 // Define the GraphQL schema
 const typeDefs = gql`
-    type Tenant {
+    type TestTableRecord {
         id: ID!
         name: String!
         email: String!
@@ -93,14 +91,14 @@ const typeDefs = gql`
     }
 
     type Query {
-        tenants: [Tenant]
+        testtable: [TestTableRecord]
     }
 `;
 
 // Define the resolvers
 const resolvers = {
     Query: {
-        tenants: async () => {
+        testtable: async () => {
             const connection = await pool.getConnection();
             const [rows] = await connection.query('SELECT * FROM testtable');
             connection.release();
