@@ -1,14 +1,50 @@
-#assuming you ve already created your sample front end page/components(react).
-#for my demonstration i will be using  online mysql database hosted in aiven "https://aiven.io/free-mysql-database"
-# mkdir mybackend(mybackend is directory for my backend code)
-#cd homehub-backend 
-# npm install express apollo-server-express graphql mysql2
-#create.env file in the mybackend directory
-#create  "index.js" in the mybackend directory & input the code (you can modify it to suit your case)
-#now we are done with the backend, you can set it up to run in the cmd or whichever terminal of your choice(#make sure you in the backend directory then run "node index.js")
-#Go to your React frontend project directory
-# npm install @apollo/client graphql //on the terminal
-#In your React project, create a new file named "ApolloProvider.js" in the src directory and input the code
-#wrap your  // src/index.js or src/App.js application with the ApolloProviderComponent.in my case i will do it on the index.js
-#section.jsx (/src/component/section.jsx) displays data from the backend 
-#npm start
+### Setup Instructions
+
+1. **Assuming you have already created your sample frontend pages/components (React).**
+   
+2. **For this demonstration, I will be using an online MySQL database hosted on Aiven:**  
+   [Aiven Free MySQL Database](https://aiven.io/free-mysql-database)
+
+3. Create a new directory for your backend code:  
+   ```bash
+ #  mkdir mybackend
+   ```
+
+4. Navigate to the backend directory:  
+   ```bash
+  # cd mybackend
+   ```
+
+5. Install the necessary dependencies:  
+   ```bash
+  # npm install express apollo-server-express graphql mysql2
+   ```
+
+6. Create a `.env` file in the `mybackend` directory.
+
+7. Create an `index.js` file in the `mybackend` directory and input the necessary code (you can modify it to suit your needs).
+
+8. Now that the backend is set up, you can run it in your command line or preferred terminal. Make sure you are in the backend directory, then execute:  
+   ```bash
+  # node index.js
+   ```
+
+9. Navigate to your React frontend project directory and install the Apollo Client:  
+   ```bash
+  # npm install @apollo/client graphql
+   ```
+
+10. In your React project, create a new file named `ApolloProvider.js` in the `src` directory and input the necessary code.
+
+11. Wrap your `src/index.js` or `src/App.js` application with the `ApolloProvider` component. In my case, I will do it in `index.js`.
+
+12. Use `section.jsx` located in `/src/component/section.jsx` to display data from the backend.
+
+13. Finally, start your React application:  
+   
+    #npm start
+    
+
+--- 
+
+Feel free to modify any part as needed!
